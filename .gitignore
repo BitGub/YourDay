@@ -14,3 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+.DS_Store
+/css/.DS_Store
+/js/.DS_Store
+/views/.DS_Store
