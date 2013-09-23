@@ -5,6 +5,5 @@ class User < ActiveRecord::Base
        	 :lockable, :timeoutable and :omniauthable
        	 
        	 validates_presence_of :firstname, :surname
-       	 validates :username, :presence => true, :uniqueness => true
-       	 
+       	 validates :username, :presence => true, :uniqueness => true      	 
 end
