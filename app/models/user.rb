@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :dockets
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, #:confirmable,
