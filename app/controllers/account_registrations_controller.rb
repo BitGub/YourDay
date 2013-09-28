@@ -6,11 +6,15 @@ class AccountRegistrationsController < Devise::RegistrationsController
   end
 
   def create
-  	super
+  super
   end
 
   def update
     super
+  end
+  
+  def destroy
+  	super
   end
   
 protected
@@ -20,5 +24,9 @@ protected
     			:gender, :date_of_birth, :password_confirmation,
     			:password, :email
     			)}
+  end
+
+  def after_sign_up_path_for(resource)
+    home_hello_path
   end
 end 
