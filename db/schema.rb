@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928164126) do
+ActiveRecord::Schema.define(version: 20131006123801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20130928164126) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
   end
 
   add_index "dockets", ["users_id"], name: "index_dockets_on_users_id", using: :btree

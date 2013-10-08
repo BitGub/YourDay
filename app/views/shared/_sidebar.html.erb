@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+<div id="SidePanel">
+  <div id="profilePicture"></div>
+    <nav id="LeftNav">
+      <ul>
+        <li><%= link_to "DAY VIEW", "#" %></li>
+        <li><%= link_to "WEEK VIEW", "#" %></li>
+        <li><%= link_to "MONTH VIEW", "#" %></li>
+        <li><%= link_to "YEAR VIEW", "#" %></li>
+        <li><%= link_to "GROUPS", "#" %></li>
+        <li><%= link_to "GOALS/TARGETS", "#" %></li>
+        <li><%= link_to "APPS", "#" %></li>
+        <li><%= link_to "UPLOADS", "#" %></li>
+      </ul>
+    </nav>
+</div>
+<% end %>
