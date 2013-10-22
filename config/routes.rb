@@ -8,6 +8,13 @@ YourDay::Application.routes.draw do
     end
   end
   
+  resources :dockets do
+    member do
+      get 'set_docket'
+      post 'trash_docket'
+    end
+  end
+  
 
   # You can have the root of your site routed with "root"
 	root 'home#index'
