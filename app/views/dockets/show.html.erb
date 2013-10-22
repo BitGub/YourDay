@@ -1,0 +1,29 @@
+<h1>Show Docket</h1>
+<div id ="ShowDocket">
+<%= form_for @docket, :remote => true do |f| %>
+  <p>
+      <%= f.label :title %>
+      <br/>
+      <%= f.text_field :title %>
+  </p>
+  <p>
+	  <%=f.label :description %>
+  	  <br/>
+  	  <%= f.text_area :description %>
+  </p>
+  <p>
+	  <%=f.label :start_datetime, 'Start Time' %>
+	  <br/>
+   	  <%= f.datetime_select :start_datetime %>
+  </p>
+  <p>
+	  <%=f.label :end_datetime, 'End Time' %>
+  	  </br>
+  	  <%= f.datetime_select :end_datetime %>
+  </p>
+  <%= f.hidden_field :users_id, :value => @user.id %>
+  <p>
+	  <%= f.submit 'edit' %>
+  </p>
+  <% end %>
+</div>

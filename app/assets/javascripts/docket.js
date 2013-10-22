@@ -10,6 +10,9 @@ $(function() {
 		
 		firstDay: 1,
 		defaultView: 'agendaWeek',
+		// editiable: true
+		allDaySlot: false,
+		allDayDefault: false,
 		
     	events: function(start, end, callback) {
         	$.ajax({
@@ -18,7 +21,7 @@ $(function() {
             	dataType: 'json',
             	data: {
 	                start: Math.round(start.getTime() / 1000),
-	                end: Math.round(end.getTime() / 1000)
+	                end: Math.round(end.getTime() / 1000),
 	            },
 	            success: function(dockets) {
 	                var events = [];
@@ -30,7 +33,30 @@ $(function() {
 	                callback(events);
 	            }
 	        });
-	    }
+	    },
+
+		dayClick: function(date, jsEvent, view) {
+	        	$.ajax({
+					type: 'GET',
+	            	url: '/dockets/new',
+	            	dataType: 'script',
+					data: { 
+						clickDate: Math.round(date.getTime() / 1000)
+					 }
+
+		        });
+				
+		    },
+			
+		eventClick: function(docket) {
+		        	$.ajax({
+				type: 'GET',
+		            	url: '/dockets/' + docket.id + '/edit',
+		            	dataType: 'script',
+		
+			        });
+		
+		    }
 	});
 
 });
