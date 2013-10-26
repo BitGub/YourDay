@@ -27,6 +27,10 @@ protected
   end
 
   def after_sign_up_path_for(resource)
-    home_hello_path
+    dockets_path(resource)
+  end
+  
+  def after_sign_in_path_for(resource)
+    dockets_path(resource)
   end
 end 
